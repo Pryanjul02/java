@@ -1,37 +1,31 @@
-import  java.util.Scanner;
-public class pallindrome {
+package Arrays.java;
+import java.util.Scanner;
+
+class palindrome {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter your number ");
-        int num=input.nextInt();
-        boolean Palindrome= ispalindrome(num);
-        if(Palindrome==true){
-            System.out.println("given no. is a palindrome");
-        }
-        else{
-            System.out.println("given no. is not a palindrome");
-        }
-
-    }
-    public static boolean ispalindrome( int num){
-        int number=reverse(num);
-        if (number==num){
-            return true;
-        }
-        else {
-            return false;
+        System.out.println("Welcome to Palindrome Number");
+        System.out.print("Please enter your number: ");
+        int num = input.nextInt();
+        boolean isPalindrome = isPalindrome(num);
+        if (isPalindrome) {
+            System.out.println("Your number is a palindrome number");
+        } else {
+            System.out.println("Your number is not a palindrome number");
         }
     }
-    public static int reverse(int num){
-        int newnum=0;
-        while(num>0){
-            int digit= num%10;
-            newnum= newnum*10 +digit;
-            num/=10;
 
+    public static boolean isPalindrome(int num) {
+        return num == reverse(num);
+    }
+
+    public static int reverse(int num) {
+        int newNum = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            newNum = newNum * 10 + digit;
+            num /= 10;
         }
-
-        return newnum;
+        return newNum;
     }
 }
-

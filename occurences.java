@@ -1,24 +1,30 @@
-import java.util.Scanner;
+package Arrays.java;
 
+import java.util.Scanner;
 public class occurences {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int[] array;
-        array = Arrays.java.ArrayUtility.inputArray();
-        System.out.println("Enter a no.");
+        int[] numarray=Arrays.java.ArrayUtility.inputArray();
+        System.out.println("Enter the no. u want to make search ");
         int a = input.nextInt();
-        int occ=0;
-        for(int num : array){
+        int occ=ocurrences( numarray , a);
 
-            if(num==a){
+        System.out.println(" your no. occurs " +occ+ " times");
 
-                occ++;
-            }
-
-
-        }
-
-        System.out.println("no. of occurences is/are:" + occ);
     }
 
+    public static int ocurrences(int[] numarray , int num){
+        int i=0;
+        int occ=0;
+        while(i<numarray.length){
+            if (numarray[i]== num){
+                occ++;
+
+            }
+            i++;
+        }
+
+
+        return occ;
+    }
 }
